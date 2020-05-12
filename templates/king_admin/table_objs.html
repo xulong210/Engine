@@ -1,0 +1,139 @@
+{% extends 'king_admin/table_index.html' %}
+{% load tags %}
+
+{% block container %}
+    {{ request.path }}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% render_app_name admin_class %}
+                {% if not admin_class.table_readonly %}<a href="{{ request.path }}add/" class="pull-right">Add</a>{% endif %}
+            </h3>
+
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <form action="" method="get">
+                    {% for condition in admin_class.list_filters %}
+                        <div class="col-lg-2">
+                            <span>{{ condition }}</span>
+                            {% render_filter_ele condition admin_class filter_conditions %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success" style="margin-top: 20px">检索</button>
+                    <hr>
+
+
+                        <div class="col-lg-3">
+                            <input type="search" name="_q" value="{{ search_key }}" placeholder="search by {% for search_fields in admin_class.search_fields %}{{ search_fields }} {% endfor %}" class="form-control" >
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="submit" class="btn btn-success">search</button>
+                        </div>
+                </form>
+            </div>
+            <hr>
+
+            <div class="row">
+                <form action="" method="post" onsubmit="return ActionSubmit(this)">
+                        <div class="col-lg-2">
+                            <select id="action_list" class="form-control" name="action">
+                                <option value="">--------</option>
+                                {% for action in admin_class.actions %}
+                                    <option value="{{ action }}">{% render_action_name action admin_class %}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-lg-1">
+                            <button type="submit" class="btn btn-primary">Go</button>
+                        </div>
+                {% csrf_token %}
+                </form>
+            </div>
+
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" onclick="CheckAllBox(this)"></th>
+                        {% for column in admin_class.list_display %}
+                            {% build_table_header_column column orderby_key admin_class filter_conditions %}
+{#                            <th><a href="?o={{ column }}">{% render_field_name column admin_class %}</a></th>#}
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>总计{{ query_sets.paginator.count }}条</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+{#                    {% get_query_sets admin_class as query_sets %}#}
+                    {% for obj in query_sets %}
+                    <tr>
+                        <td><input tag="obj_checkbox" type="checkbox" value="{{ obj.id }}"></td>
+                        {% build_table_row obj admin_class request %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <nav>
+                <ul class="pagination">
+                  {% if query_sets.has_previous %}
+                        <li class="">{% build_previous_page query_sets filter_conditions orderby_key search_key%}</li>
+                  {% endif %}
+                    {#<li class="active"><a>{{ query_sets.number }}</a></li>#}
+
+{#                  {% for loop_counter in query_sets.paginator.page_range %}#}
+{#                        {% render_page_ele  loop_counter query_sets filter_conditions%}#}
+{#                  {% endfor %}#}
+
+                  {% build_paginators query_sets filter_conditions orderby_key search_key %}
+
+                  {% if query_sets.has_next %}
+                        <li class="">{% build_next_page query_sets filter_conditions orderby_key search_key %}</li>
+                  {% endif %}
+
+
+{#                <li class="disabled"><a href="#">&laquo;</a></li>#}
+{#                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>#}
+{#                #}
+              </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        function CheckAllBox(ele) {
+            if($(ele).prop("checked")){
+                $("input[tag='obj_checkbox']").prop("checked",true);
+            }else{
+                $("input[tag='obj_checkbox']").prop("checked",false);
+            }
+        }
+
+        function ActionSubmit(form_ele) {
+            var selected_ids = [];
+            $("input[tag='obj_checkbox']:checked").each(function () {
+                selected_ids.push($(this).val());
+            }); // 获取所有选中的数据的 id放在列表中
+            var selected_action = $("#action_list").val(); //获取选择的action
+            console.log(selected_ids);
+            console.log(selected_action);
+            if (!selected_ids.length){
+                alert("No object selected");
+                return false;
+            }
+            if(!selected_action){
+                alert("No action selected");
+                return false;
+            }
+
+            var selected_ids_ele = "<input name='selected_ids' type='hidden' value='"+ selected_ids.toString()+"'>";
+            $(form_ele).append(selected_ids_ele);
+            //start submit
+            return true;
+        }
+    </script>
+{% endblock %}

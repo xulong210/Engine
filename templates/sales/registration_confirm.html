@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block page-content %}
+    <h2>客户信息</h2>
+    {{ customer_form }}
+    <br>
+    <h2>选课信息</h2>
+    <div class="row col-lg-offset-1">
+        <span>课程名称:{{ enroll_obj.enrolled_class.course }}</span>
+    </div>
+    <div class="row col-lg-offset-1" style="margin-bottom: 20px">
+        <span>咨询客服:{{ enroll_obj.consultant }}</span>
+    </div>
+
+    <button type="button" class="btn btn-danger"><a href="{% url "registration_refuse" enroll_obj.id %}">驳回合同</a></button>
+    <button type="submit" class="btn btn-success"><a href="{% url "payment" enroll_obj.id %}">下一步</a></button>
+{% endblock %}

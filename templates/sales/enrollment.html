@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block page-content %}
+    <h2>报名</h2>
+
+    <form method="post" class="form-horizontal col-lg-7" style="margin-top: 20px">{% csrf_token %}
+        <span style="color: red">{{ form_obj.errors }}</span>
+        <div class="form-group">
+                <label class="col-sm-2">客户</label>
+                <div class="col-sm-9">
+                    {{ obj.name }}
+                </div>
+            </div>
+        {% for field in form_obj %}
+            <div class="form-group">
+                <label class="col-sm-2">{{ field.label }}</label>
+                <div class="col-sm-9">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success pull-right">下一步</button>
+
+    </form>
+    <div class="row">
+        <div>
+            <ul>
+                {% for k,v in msg.items %}
+                    <li>{{ v }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

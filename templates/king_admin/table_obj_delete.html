@@ -1,0 +1,22 @@
+{% extends 'king_admin/table_index.html' %}
+{% load tags %}
+{% block container %}
+    <h3>你确定吗？</h3>
+    <h5>下列相关的项目都将被删除</h5>
+
+    <h4><b>对象</b></h4>
+    {% display_obj_related objs %}
+    <ul style="color: red">
+        {% for k,v in errors.items %}
+            <li>{{ k }}:{{ v }}</li>
+        {% endfor %}
+    </ul>
+    <form action="" method="post">
+        <input type="hidden" name="selected_ids" value="{{ selected_ids }}">
+        <input type="hidden" name="action" value="{{ action }}">
+        <button type="submit" class="btn btn-danger" value="del" name="sub">确定</button>
+        <button type="submit" class="btn btn-success" value="return" name="sub">不,返回</button>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}

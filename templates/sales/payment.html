@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block page-content %}
+    <h2>缴费记录创建</h2>
+    {% for k,v in errors.items %}
+        <span style="color: red">{{ k }}:{{ v }}</span>
+    {% endfor %}
+    <form method="post" class="form-horizontal">{% csrf_token %}
+        <div class="form-group">
+            <label>客户</label>
+            <div>{{ enroll_obj.customer }}</div>
+        </div>
+        <div class="form-group">
+            <label>课程</label>
+            <div>{{ enroll_obj.enrolled_class.course }}</div>
+        </div>
+        <div class="form-group">
+            <label for="">费用</label>
+            <input name="amount" type="text" placeholder="不低于500">
+        </div>
+        <div class="form-group">
+            <label>咨询</label>
+            <div>{{ enroll_obj.consultant }}</div>
+        </div>
+    <button type="submit" class="btn btn-success">确认</button>
+    </form>
+{% endblock %}

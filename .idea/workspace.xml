@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5918602f-a16d-448f-b384-efb80c656283" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WQ2Ml0CjoCDRnYozDustIFNdCl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pycharm代码\pycharm项目\perfectCRM\static\plugins\dropzone" />
+      <recent name="D:\pycharm代码\pycharm项目\perfectCRM\perfectCRM" />
+      <recent name="D:\pycharm代码\pycharm项目\perfectCRM\static\js" />
+      <recent name="D:\pycharm代码\pycharm项目\perfectCRM\static\font" />
+      <recent name="D:\pycharm代码\pycharm项目\perfectCRM\templates\king_admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="perfectCRM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="perfectCRM" type="Python.DjangoServer" factoryName="Django server">
+      <module name="perfectCRM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5918602f-a16d-448f-b384-efb80c656283" name="Default Changelist" comment="" />
+      <created>1579067451667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579067451667</updated>
+      <workItem from="1579067454151" duration="6257000" />
+      <workItem from="1579173444891" duration="12321000" />
+      <workItem from="1579264373887" duration="5451000" />
+      <workItem from="1579325567305" duration="9466000" />
+      <workItem from="1579408283776" duration="16280000" />
+      <workItem from="1579616953288" duration="2641000" />
+      <workItem from="1579666691859" duration="12006000" />
+      <workItem from="1579840343916" duration="14125000" />
+      <workItem from="1579932648025" duration="13226000" />
+      <workItem from="1580053747488" duration="5057000" />
+      <workItem from="1580100069651" duration="11374000" />
+      <workItem from="1580192861487" duration="10488000" />
+      <workItem from="1580225004292" duration="1847000" />
+      <workItem from="1580260171211" duration="17574000" />
+      <workItem from="1580311632889" duration="2501000" />
+      <workItem from="1580381771363" duration="6478000" />
+      <workItem from="1580645085610" duration="3297000" />
+      <workItem from="1580697672101" duration="3885000" />
+      <workItem from="1580726354168" duration="5584000" />
+      <workItem from="1580818744119" duration="7911000" />
+      <workItem from="1580874129011" duration="11760000" />
+      <workItem from="1580890898475" duration="6755000" />
+      <workItem from="1580917546697" duration="1074000" />
+      <workItem from="1580976824521" duration="12379000" />
+      <workItem from="1581141282385" duration="8031000" />
+      <workItem from="1581174675259" duration="3813000" />
+      <workItem from="1581244951697" duration="8375000" />
+      <workItem from="1581335502870" duration="2402000" />
+      <workItem from="1581406213002" duration="10126000" />
+      <workItem from="1581490818331" duration="1803000" />
+      <workItem from="1581499926525" duration="4709000" />
+      <workItem from="1581653275480" duration="2000" />
+      <workItem from="1581673148046" duration="11682000" />
+      <workItem from="1581763785409" duration="6710000" />
+      <workItem from="1581825716186" duration="6507000" />
+      <workItem from="1581847779655" duration="6573000" />
+      <workItem from="1581914897587" duration="1122000" />
+      <workItem from="1581922920009" duration="2719000" />
+      <workItem from="1581997848355" duration="12724000" />
+      <workItem from="1582103099333" duration="11303000" />
+      <workItem from="1582196287421" duration="5043000" />
+      <workItem from="1582261700347" duration="7437000" />
+      <workItem from="1582348843276" duration="12376000" />
+      <workItem from="1582459301251" duration="2532000" />
+      <workItem from="1582512604327" duration="1202000" />
+      <workItem from="1582532754513" duration="3360000" />
+      <workItem from="1582612926636" duration="4973000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="317" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581245266363">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="317" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1581245266363" />
+    <state width="1237" height="155" key="GridCell.Tab.0.bottom" timestamp="1580656115529">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580656115529" />
+    <state width="1237" height="155" key="GridCell.Tab.0.center" timestamp="1580656115529">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580656115529" />
+    <state width="1237" height="155" key="GridCell.Tab.0.left" timestamp="1580656115529">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580656115529" />
+    <state width="1237" height="155" key="GridCell.Tab.0.right" timestamp="1580656115529">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580656115529" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1582532754683">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582532754683" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1582014483883">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1582014483883" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/perfectCRM$test.coverage" NAME="test Coverage Results" MODIFIED="1580647408496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

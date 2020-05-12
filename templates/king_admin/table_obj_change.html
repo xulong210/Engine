@@ -1,0 +1,111 @@
+{% extends 'king_admin/table_index.html' %}
+{% load tags %}
+
+{% block extra-css-resources %}
+    <style type="text/css">
+        .filter-select-box{
+            height: 250px!important;
+            width: 100%;
+        }
+    </style>
+
+{% endblock %}
+
+{% block container %}
+
+    <form class="form-horizontal" method="post" onsubmit="return SelectAllChosen()">
+        <span style="color: red">{{ form_obj.errors }}</span>
+        {% for field in form_obj %}
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label" style="font-weight: normal">
+            {% if field.field.required %}
+                <b>{{ field.label }}</b>
+{#                field.label 获取的是verbose_name#}
+            {% else %}
+                {{ field.label }}
+            {% endif %}
+        </label>
+        <div class="col-sm-6">
+{#          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">#}
+            {% if field.name in admin_class.filter_horizontal %}
+                <div class="col-md-5">
+                    {% get_m2m_obj_list admin_class field as m2m_obj_list %}
+                    {% get_m2m_selected_obj_list form_obj field as m2m_selected_obj_list %}
+                    <select multiple class="filter-select-box" id="id_{{ field.name }}_from">
+                        {% if field.name in admin_class.readonly_fields and form_obj.instance.id %}
+                            {% for obj in m2m_obj_list %}
+                                {% if obj not in m2m_selected_obj_list %}
+                                    <option  value="{{ obj.id }}" disabled>{{ obj.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% for obj in m2m_obj_list %}
+                                {% if obj not in m2m_selected_obj_list %}
+                                    <option ondblclick="MoveElementTo(this,'id_{{ field.name }}_to','id_{{ field.name }}_from')" value="{{ obj.id }}">{{ obj.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    箭头
+                </div>
+                <div class="col-md-5">
+
+                    <select multiple tag="chosen_list" name="{{ field.name }}" class="filter-select-box" id="id_{{ field.name }}_to">
+                        {% if field.name in admin_class.readonly_fields and form_obj.instance.id %}
+                            {% for obj in m2m_selected_obj_list %}
+                                <option value="{{ obj.id }}" disabled>{{ obj.name }}</option>
+                            {% endfor %}
+                        {% else %}
+                            {% for obj in m2m_selected_obj_list %}
+                                <option ondblclick="MoveElementTo(this,'id_{{ field.name }}_from','id_{{ field.name }}_to')" value="{{ obj.id }}">{{ obj.name }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                    {{ field.errors.as_text }}
+{#                    {% print_obj_methods field %}#}
+{#                      {{ form_obj.instance.tags.all}}#}
+                </div>
+            {% else %}
+                {{ field }}<span style="color: red">{{ field.errors.as_text }}</span>
+                <span>{{ field.help_text }}</span>
+            {% endif %}
+        </div>
+      </div>
+        {% endfor %}
+
+       {% if not admin_class.table_readonly %}
+          <div class="form-group">
+              {% if form_obj.instance.id %}
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger"><a href="{% url "table_obj_delete" app_name table_name form_obj.instance.id %} ">Delete</a></button>
+                </div>
+              {% endif %}
+              <div class="col-sm-10 pull-right">
+                <button type="submit" class="btn btn-success">Save</button>
+              </div>
+          </div>
+            {% csrf_token %}
+        </form>
+        {% endif %}
+
+    <script>
+        function MoveElementTo(ele,target_id,new_target_id) {
+            var opt_ele = "<option value='" + $(ele).val() + "' ondblclick=MoveElementTo(this,'" + new_target_id + "','"+ target_id +"')>" + $(ele).text() + "</option>";
+            $("#"+target_id).append(opt_ele);
+            $(ele).remove();
+        }
+
+        function SelectAllChosen() {
+            $("select[tag='chosen_list'] option").each(function () {
+                $(this).prop("selected",true);
+            });
+
+            $("form").find("[disabled]").removeAttr("disabled");
+
+            return true
+
+        }
+    </script>
+{% endblock %}
